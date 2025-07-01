@@ -1,5 +1,6 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import LogoutButton from "./LogoutBtn";
 
 export function TopBar() {
   return (
@@ -27,6 +28,7 @@ export function TopBar() {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        <LogoutButton />
       </Container>
     </Navbar>
   );
