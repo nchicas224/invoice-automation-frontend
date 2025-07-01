@@ -10,6 +10,12 @@
         "rewrite": "/index.html"
     }
   ],
+  "responseOverrides": {
+    "401": {
+        "rewrite": "/.auth/login/aad",
+        "statusCode": 302
+    }
+  },
   "auth": {
     "rolesSource": "/api/GetRoles",
     "identityProviders": {
