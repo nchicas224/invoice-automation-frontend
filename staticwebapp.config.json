@@ -28,11 +28,5 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": [ "/api/*", "/.auth/*"]
-  },
-  "responseOverrides": {
-    "401": {
-        "redirect": "/.auth/login/aad",
-        "statusCode": 302
-    }
   }
 }
