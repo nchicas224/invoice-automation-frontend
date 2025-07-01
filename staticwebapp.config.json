@@ -1,5 +1,16 @@
 {
-  "routes": [],
+  "routes": [
+    {
+        "route": "/api/*",
+        "allowedRoles": ["authenticated"]
+    },
+    {
+        "route": "/*",
+        "allowedRoles": ["authenticated"],
+        "statusCode": 200,
+        "rewrite": "/index.html"
+    }
+  ],
   "auth": {
     "rolesSource": "/api/GetRoles",
     "identityProviders": {
