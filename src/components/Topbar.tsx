@@ -1,15 +1,14 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LogoutButton from "./LogoutBtn";
+import NavbarLogo from "./NavbarBrand";
 
 export function TopBar() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
         {/* Brand / logo */}
-        <Navbar.Brand as={Link} to="/dashboard">
-          Living Classrooms
-        </Navbar.Brand>
+        <NavbarLogo />
 
         {/* Hamburger toggle on small screens */}
         <Navbar.Toggle aria-controls="main-nav" />
