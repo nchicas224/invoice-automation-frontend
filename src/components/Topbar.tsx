@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import LogoutButton from "./LogoutBtn";
 import NavbarLogo from "./NavbarBrand";
 import { UserName } from "../hooks/UserName";
+import { useUser } from "../hooks/UserContext";
 
 export function TopBar() {
+  const { user } = useUser();
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>

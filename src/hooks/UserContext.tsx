@@ -34,6 +34,8 @@ export function UserProfile({ children }: { children: React.ReactNode }) {
 
 export function useUser(){
   const ctx = useContext(UserContext);
-  if (!ctx) throw new Error('useUser must be used inside of UserProfile element.');
+  if (!ctx) {
+    throw new Error('useUser must be used inside of UserProfile element.');
+  }
   return ctx;
 }
