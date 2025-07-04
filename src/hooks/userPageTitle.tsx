@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+
 function PageSetter({ children }: { children: React.ReactNode }) {
     
     const { pathname } = useLocation();
@@ -16,7 +17,9 @@ function PageSetter({ children }: { children: React.ReactNode }) {
 
             if (words.length){
                 for ( const e of words ){
-                    title += `${e.normalize} `
+                    const cap = e[0].toUpperCase();
+                    const word = cap.concat(e.slice(1));
+                    title += `${word} `
                 };
             }
         };
