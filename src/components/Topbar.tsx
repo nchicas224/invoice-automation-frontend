@@ -27,8 +27,9 @@ export function TopBar() {
             <Nav.Link as={Link} to="/helpSupport">
               Help and Support
             </Nav.Link>
+            <UserName />
           </Nav>
-          <UserName />
+          
           <LogoutButton />
         </Navbar.Collapse>
       </Container>
