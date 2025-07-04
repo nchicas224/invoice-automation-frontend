@@ -6,7 +6,7 @@ function PageSetter({ children }: { children: React.ReactNode }) {
     const { pathname } = useLocation();
 
     useEffect(() => {
-        const match = /\/([^/]+)$/.exec(useLocation().pathname);
+        const match = /\/([^/]+)$/.exec(pathname);
         const page = match ? match[1] : "Home";
         document.title = `Invoice App - ${page}`;
     }, [pathname]);
