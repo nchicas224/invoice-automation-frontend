@@ -8,7 +8,24 @@ function PageSetter({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         const match = /\/([^/]+)$/.exec(pathname);
         const page = match ? match[1] : "Home";
-        document.title = `${page} | Invoice App`;
+
+        let title = "";
+        if (page !== "Home") {
+            let regex = /[a-z]+|[A-Z][a-z]+/g;
+            const words = page.match(regex) || [];
+
+            if (words.length){
+                for ( const e of words ){
+                    title += `${e} `
+                };
+            }
+        };
+
+        if (title){
+            document.title = `${title} | Invoice App`;
+        } else {
+            document.title = `${page} | Invoice App`;
+        };
     }, [pathname]);
 
     return <>{children}</>;
