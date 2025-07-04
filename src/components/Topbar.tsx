@@ -5,7 +5,6 @@ import NavbarLogo from "./NavbarBrand";
 import { UserName } from "../hooks/UserName";
 
 export function TopBar() {
-
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
@@ -27,9 +26,10 @@ export function TopBar() {
             <Nav.Link as={Link} to="/helpSupport">
               Help and Support
             </Nav.Link>
-            <UserName />
+            <Nav.Link disabled>
+              <UserName />
+            </Nav.Link>
           </Nav>
-          
           <LogoutButton />
         </Navbar.Collapse>
       </Container>
