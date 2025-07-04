@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
 import "./App.css";
 
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
 import { TopBar } from "./components/Topbar";
 import PendingInvoices from "./pages/PendingInvoices";
@@ -10,17 +9,6 @@ import HelpSupport from "./pages/HelpAndSupport";
 
 
 function App() {
-
-interface UserProfile { userName: string; }
-
-const [userName, setUserName] = useState<string | null>(null);
-
-async function loadUsername(){
-  const resp = await fetch("/api/getUser", { credentials: "include"} );
-  if (!resp.ok) throw new Error("Failed to load user profile.");
-  const { userName } = (await resp.json()) as UserProfile;
-  return userName;
-}
 
   return (
     <>

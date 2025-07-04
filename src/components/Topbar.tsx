@@ -2,6 +2,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LogoutButton from "./LogoutBtn";
 import NavbarLogo from "./NavbarBrand";
+import { UserName } from "../hooks/UserName";
 
 export function TopBar() {
   return (
@@ -26,8 +27,9 @@ export function TopBar() {
               Help and Support
             </Nav.Link>
           </Nav>
+          <UserName />
+          <LogoutButton />
         </Navbar.Collapse>
-        <LogoutButton />
       </Container>
     </Navbar>
   );
