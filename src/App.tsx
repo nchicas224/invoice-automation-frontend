@@ -22,14 +22,6 @@ async function loadUsername(){
   return userName;
 }
 
-const location = useLocation();
-
-useEffect(() => {
-  const match = /\/([^/+])$/.exec(location.pathname);
-  const page = match ? match[1] : "Home";
-  document.title = `Invoice App - ${page}`;
-},[location.pathname]);
-
   return (
     <>
       {/* <div style={{ display: 'flex', minHeight: '100vh'}}> */}
