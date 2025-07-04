@@ -11,7 +11,7 @@ function PageSetter({ children }: { children: React.ReactNode }) {
         document.title = `Invoice App - ${page}`;
     }, [pathname]);
 
-    return <>children</>;
+    return <>{children}</>;
 }
 
 export default PageSetter;
