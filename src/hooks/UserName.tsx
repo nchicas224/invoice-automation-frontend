@@ -2,8 +2,8 @@ import { useUser } from "./UserContext";
 
 export function UserName(){
     const { user } = useUser();
-    if (!user) {
-        throw new Error("UserContext not provided.");
+    if (user == null) {
+        return <h1>Loading...</h1>;
     }
 
     return (
