@@ -16,7 +16,7 @@ function PageSetter({ children }: { children: React.ReactNode }) {
 
             if (words.length){
                 for ( const e of words ){
-                    title += `${e} `
+                    title += `${e.normalize} `
                 };
             }
         };
