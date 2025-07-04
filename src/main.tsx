@@ -4,15 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import App from "./App.tsx";
 import PageSetter from "./hooks/userPageTitle.tsx";
-import { UserContext } from "./hooks/UserContext.tsx";
+import { UserContext, UserProfile } from "./hooks/UserContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <PageSetter>
-        <UserContext value={undefined}>
+        <UserProfile>
           <App />
-        </UserContext>
+        </UserProfile>
       </PageSetter>
     </BrowserRouter>
   </StrictMode>
