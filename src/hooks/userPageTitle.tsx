@@ -1,9 +1,17 @@
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-function usePageTitle(){
-    const match = /\/([^/+])$/.exec(useLocation().pathname);
-    const page = match ? match[1] : "Home";
-    document.title = `Invoice App - ${page}`;
-};
+function PageSetter({ children }: { children: React.ReactNode }) {
+    
+    const { pathname } = useLocation();
 
-export default usePageTitle;
+    useEffect(() => {
+        const match = /\/([^/]+)$/.exec(useLocation().pathname);
+        const page = match ? match[1] : "Home";
+        document.title = `Invoice App - ${page}`;
+    }, [pathname]);
+
+    return <>children</>;
+}
+
+export default PageSetter;

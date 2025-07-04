@@ -1,7 +1,5 @@
-import usePageTitle from "../hooks/userPageTitle";
 
 function DashboardPage() {
-  usePageTitle();
 
   return (
     <div>
