@@ -1,10 +1,11 @@
-import { useUser } from "./UserContext";
+import { useUser, getUserName } from "./UserContext";
 
 export function UserName() {
   const { user } = useUser();
+  const name = getUserName(user);
   if (user == null) {
     return <>Loading...</>;
   }
 
-  return <>{user.name || "Name not found"}</>;
+  return <>{name || "Name not found"}</>;
 }
