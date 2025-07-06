@@ -26,11 +26,13 @@ export function TopBar() {
             <Nav.Link as={Link} to="/helpSupport">
               Help and Support
             </Nav.Link>
+          </Nav>
+          <Nav className="ms-auto">
             <Nav.Link disabled>
               <UserName />
             </Nav.Link>
+            <LogoutButton />
           </Nav>
-          <LogoutButton />
         </Navbar.Collapse>
       </Container>
     </Navbar>
