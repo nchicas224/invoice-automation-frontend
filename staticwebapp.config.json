@@ -1,21 +1,21 @@
 {
   "routes": [
     {
-        "route": "/.auth/*",
-        "allowedRoles": ["anonymous", "authenticated"]
+      "route": "/api/NotifyNewMail",
+      "methods": ["GET", "HEAD", "POST"],
+      "allowedRoles": ["anonymous"]
     },
     {
-        "route": "/api/NotifyNewMail",
-        "methods": ["GET", "HEAD", "POST"],
-        "allowedRoles": ["anonymous"]
+      "route": "/.auth/*",
+      "allowedRoles": ["anonymous", "authenticated"]
     },
     {
-        "route": "/api/*",
-        "allowedRoles": ["authenticated"]
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"]
     },
     {
-        "route": "/*",
-        "allowedRoles": ["authenticated"]
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
     }
   ],
   "auth": {
