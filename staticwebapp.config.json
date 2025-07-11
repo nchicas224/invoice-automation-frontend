@@ -5,6 +5,16 @@
         "allowedRoles": ["anonymous", "authenticated"]
     },
     {
+      "route": "/api/NotifyNewMail",
+      "methods": ["GET"],
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/api/NotifyNewMail",
+      "methods": ["POST"],
+      "allowedRoles": ["authenticated"]
+    },
+    {
         "route": "/api/*",
         "allowedRoles": ["authenticated"]
     },
