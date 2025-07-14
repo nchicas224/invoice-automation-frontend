@@ -1,7 +1,7 @@
-export default function PendingInvoices() {
+export default function Invoices() {
   return (
     <div>
-      <h2>Pending Invoices</h2>
+      <h2>Invoices</h2>
       <p>Check out your invoices here!</p>
     </div>
   );

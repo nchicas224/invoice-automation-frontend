@@ -3,7 +3,7 @@ import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
 import { TopBar } from "./components/Topbar";
-import PendingInvoices from "./pages/PendingInvoices";
+import Invoices from "./pages/Invoices";
 import { Container } from "react-bootstrap";
 import HelpSupport from "./pages/HelpAndSupport";
 
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/pendingInvoices" element={<PendingInvoices />} />
+          <Route path="/invoices" element={<Invoices />} />
           <Route path="/helpSupport" element={<HelpSupport />} />
         </Routes>
       </Container>
