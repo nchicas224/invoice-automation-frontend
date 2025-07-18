@@ -6,7 +6,7 @@ import { UserName } from "../hooks/UserName";
 
 export function TopBar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar className="lcf-bg-primary" variant="dark" expand="lg">
       <Container fluid>
         {/* Brand / logo */}
         <NavbarLogo />

@@ -14,7 +14,7 @@ function App() {
     <>
       {/* <div style={{ display: 'flex', minHeight: '100vh'}}> */}
       <TopBar />
-      <Container fluid>
+      <Container fluid className="px-0">
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<DashboardPage />} />
