@@ -1,7 +1,17 @@
 import { Col, Row, Container } from "react-bootstrap";
 import InvoiceNav from "../components/InvoiceSideBar.tsx";
+import InvoiceTab from "./InvoiceTabs.tsx";
+import { useParams } from "react-router-dom";
+import cleanTitle from "../helpers/CleanTitle.ts";
 
 export default function Invoices() {
+  const { invTab } = useParams()
+
+  let cleanedTab = "Loading..."
+  if (typeof invTab === "string") {
+    cleanedTab = cleanTitle(invTab);
+  }
+
   return (
     <Container fluid className="px-0">
       <Row className="g-0">
@@ -13,8 +23,11 @@ export default function Invoices() {
         <Col className="p-4">
           <Row className="border-bottom border-2 border-dark">
             <Col className="p-0">
-              <h1 className="text-start">Invoices</h1>
+              <h1 className="text-start">{cleanedTab}</h1>
             </Col>
+          </Row>
+          <Row>
+            <InvoiceTab invTab={invTab ?? "Error"} />
           </Row>
         </Col>
       </Row>

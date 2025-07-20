@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/invoices" element={<Invoices />} />
+          <Route path="/invoices/:invTab" element={<Invoices />} />
           <Route path="/helpSupport" element={<HelpSupport />} />
         </Routes>
       </Container>

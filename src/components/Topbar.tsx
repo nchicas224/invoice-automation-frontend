@@ -20,7 +20,7 @@ export function TopBar() {
             <Nav.Link as={Link} to="/dashboard">
               Dashboard
             </Nav.Link>
-            <Nav.Link as={Link} to="/invoices">
+            <Nav.Link as={Link} to="/invoices/to-do">
               Invoices
             </Nav.Link>
             <Nav.Link as={Link} to="/helpSupport">
