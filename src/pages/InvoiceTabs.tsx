@@ -48,7 +48,7 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   }
 
   return (
-    <Table>
+    <Table striped bordered hover>
       <thead>
         <th>ID</th>
         <th>Invoice Name</th>
