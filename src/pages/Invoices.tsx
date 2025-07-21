@@ -14,7 +14,7 @@ export default function Invoices() {
 
   return (
     <Container fluid className="px-0">
-      <Row className="g-0">
+      <Row className="g-0 align-items-stretch">
         <Col xs="auto" className="px-0">
           <InvoiceNav/>
         </Col>
