@@ -26,6 +26,7 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   const user = userName(); 
 
   useEffect(() => {
+    if (!user) return;
     fetch(`/api/getInvoiceList?tab=${invTab}&currentUser=${user}`)
     .then(r => r.json() as Promise<InvoiceMap>)
     .then(data => {
@@ -37,7 +38,7 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
         );
         setData(invoices);
     })
-  }, [invTab]);
+  }, [invTab, user]);
 
   if (!data){
     return <h1>Loading...</h1>
