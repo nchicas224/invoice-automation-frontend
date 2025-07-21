@@ -50,19 +50,23 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   return (
     <Table striped bordered hover>
       <thead>
-        <th>ID</th>
-        <th>Invoice Name</th>
-        <th>Date Created</th>
-        <th>Status</th>
-      </thead>
-      {data.map(inv => (
         <tr>
-          <td>{inv.id}</td>
-          <td>{inv.name}</td>
-          <td>{inv.creation_time}</td>
-          <td>{inv.status}</td>
+          <th>ID</th>
+          <th>Invoice Name</th>
+          <th>Date Created</th>
+          <th>Status</th>
         </tr>
-      ))}
+      </thead>
+      <tbody>
+        {data.map(inv => (
+          <tr>
+            <td>{inv.id}</td>
+            <td>{inv.name}</td>
+            <td>{inv.creation_time}</td>
+            <td>{inv.status}</td>
+          </tr>
+        ))}
+      </tbody>
     </Table>
   );
 }
