@@ -78,3 +78,8 @@ export function getUserName(user: User | null){
   }
   return name ? name : null;
 }
+
+export function userName(){
+  const user = getUser();
+  return getUserName(user);
+}
