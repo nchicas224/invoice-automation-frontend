@@ -6,7 +6,7 @@ export default function InvoiceNav(){
         <Navbar
             variant="dark" 
             expand={false}
-            className="flex-column bg-dark bg-gradient"
+            className="flex-column flex-fill min-vh-100 bg-dark bg-gradient"
         >
             <Nav className="flex-column w-100 p-4 fw-semibold">
                 <Nav.Link as={Link} to="/invoices/to-do">

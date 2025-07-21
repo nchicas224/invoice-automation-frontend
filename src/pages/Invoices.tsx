@@ -15,7 +15,7 @@ export default function Invoices() {
   return (
     <Container fluid className="px-0">
       <Row className="g-0 align-items-stretch">
-        <Col xs="auto" className="px-0">
+        <Col xs="auto" className="px-0 d-flex">
           <InvoiceNav/>
         </Col>
       
@@ -26,7 +26,7 @@ export default function Invoices() {
               <h1 className="text-start">{cleanedTab}</h1>
             </Col>
           </Row>
-          <Row>
+          <Row className="d-flex">
             <InvoiceTab invTab={invTab ?? "Error"} />
           </Row>
         </Col>
