@@ -8,11 +8,10 @@ interface InvoiceData {
   status: string;
 }
 
-interface InvoiceRecord {
+interface InvoiceResp {
+  name: string;
   values: InvoiceData;
 }
-
-type InvoiceMap = Record<string, InvoiceRecord>;
 
 interface Invoice {
   name: string;
@@ -21,6 +20,8 @@ interface Invoice {
   status: string;
 }
 
+type InvoiceList = InvoiceResp[];
+
 export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   const [data, setData] = useState<Invoice[] | null>(null);
   const user = getUser(); 
@@ -28,16 +29,17 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   useEffect(() => {
     if (!user) return;
     fetch(`/api/getInvoiceList?tab=${invTab}&currentUser=${user.userDetails}`)
-    .then(r => r.json() as Promise<InvoiceMap>)
+    .then(r => r.json() as Promise<InvoiceList>)
     .then(data => {
-        const invoices: Invoice[] = Object.entries(data).map(
-          ([name, values]) => ({
-            name,
-            ...values.values,
+        const invoices: Invoice[] = data.map(
+          item => ({
+            name: item.name,
+            ...item.values,
           })
         );
         setData(invoices);
     })
+    .catch(console.error)
   }, [invTab, user]);
 
   if (!data){
