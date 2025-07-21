@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { userName } from "../hooks/UserContext";
+import { getUser } from "../hooks/UserContext";
 
 interface InvoiceData {
   id: string;
@@ -23,11 +23,11 @@ interface Invoice {
 
 export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   const [data, setData] = useState<Invoice[] | null>(null);
-  const user = userName(); 
+  const user = getUser(); 
 
   useEffect(() => {
     if (!user) return;
-    fetch(`/api/getInvoiceList?tab=${invTab}&currentUser=${user}`)
+    fetch(`/api/getInvoiceList?tab=${invTab}&currentUser=${user.userDetails}`)
     .then(r => r.json() as Promise<InvoiceMap>)
     .then(data => {
         const invoices: Invoice[] = Object.entries(data).map(
