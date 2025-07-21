@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getUser } from "../hooks/UserContext";
+import Table from "react-bootstrap/Table";
 
 interface InvoiceData {
   id: string;
@@ -43,18 +44,26 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   }, [invTab, user]);
 
   if (!data){
-    return <h1>Loading...</h1>
+    return <h1>Loading...</h1> //Add a spinner element for Loading.
   }
 
   return (
-    <div>
+    <Table>
+      <thead>
+        <th>ID</th>
+        <th>Invoice Name</th>
+        <th>Date Created</th>
+        <th>Status</th>
+      </thead>
       {data.map(inv => (
-        <div>
-          <div>{inv.name}</div>
-          <div>{inv.creation_time}</div>
-        </div>
+        <tr>
+          <td>{inv.id}</td>
+          <td>{inv.name}</td>
+          <td>{inv.creation_time}</td>
+          <td>{inv.status}</td>
+        </tr>
       ))}
-    </div>
+    </Table>
   );
 }
 
