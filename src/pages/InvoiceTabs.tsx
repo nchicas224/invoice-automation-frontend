@@ -44,6 +44,10 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
     return <h1>Loading...</h1> //Add a spinner element for Loading.
   }
 
+  if(typeof data === "string"){
+    return <p>{data}</p>
+  }
+
   return (
     <Table striped bordered hover variant="light" className="invoice-list-table">
       <thead>
