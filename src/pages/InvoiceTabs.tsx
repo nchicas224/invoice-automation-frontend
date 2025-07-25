@@ -55,36 +55,38 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   }
 
   return (
-    <Table striped hover variant="light" className="invoice-list-table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Invoice #</th>
-          <th>Invoice Name</th>
-          <th>Vendor</th>
-          <th>Amount</th>
-          <th>Invoice Date</th>
-          <th>Due Date</th>
-          <th>Date Created</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map(inv => (
+    <div className="table-responsive">
+      <Table striped hover variant="light" className="invoice-list-table">
+        <thead>
           <tr>
-            <td>{inv.id}</td>
-            <td>{inv.inv_num}</td>
-            <td>{inv.inv_name}</td>
-            <td>{inv.vendor}</td>
-            <td>{inv.amount}</td>
-            <td>{inv.inv_date}</td>
-            <td>{inv.due_date}</td>
-            <td>{inv.creation_date}</td>
-            <td>{inv.status}</td>
+            <th>ID</th>
+            <th>Invoice #</th>
+            <th>Invoice Name</th>
+            <th>Vendor</th>
+            <th>Amount</th>
+            <th>Invoice Date</th>
+            <th>Due Date</th>
+            <th>Date Created</th>
+            <th>Status</th>
           </tr>
-        ))}
-      </tbody>
-    </Table>
+        </thead>
+        <tbody>
+          {data.map(inv => (
+            <tr>
+              <td title={inv.id}>{inv.id.substring(0,8) + "..."}</td>
+              <td>{inv.inv_num}</td>
+              <td>{inv.inv_name}</td>
+              <td>{inv.vendor}</td>
+              <td>{inv.amount}</td>
+              <td>{inv.inv_date}</td>
+              <td>{inv.due_date}</td>
+              <td>{inv.creation_date}</td>
+              <td>{inv.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </div>
   );
 }
 
