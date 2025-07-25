@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getUser } from "../hooks/UserContext";
+import LoadSpinner from "../components/LoadingSpinner";
 import Table from "react-bootstrap/Table";
 
 // interface InvoiceData {
@@ -41,11 +42,11 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   }, [invTab, user]);
 
   if (!data){
-    return <h1>Loading...</h1> //Add a spinner element for Loading.
+    return <LoadSpinner/>
   }
 
   if(typeof data === "string"){
-    return <p>{data}</p>
+    return <p>{data}</p> // Returns no messages found message...possible to make it look better
   }
 
   return (
