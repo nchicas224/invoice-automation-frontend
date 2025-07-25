@@ -56,7 +56,7 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
 
   return (
     <div className="table-responsive">
-      <Table striped hover variant="light" className="invoice-list-table">
+      <Table striped borderless hover variant="light" className="invoice-list-table">
         <thead>
           <tr>
             <th>ID</th>
