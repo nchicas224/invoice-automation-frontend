@@ -30,14 +30,19 @@ interface Invoice {
 //type InvoiceList = InvoiceResp[];
 
 export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
-  const [data, setData] = useState<Invoice[] | null>(null);
+  const [data, setData] = useState<Invoice[] | string>("");
   const user = getUser(); 
 
   useEffect(() => {
     if (!user) return;
     fetch(`/api/getInvoiceList?tab=${invTab}&currentUser=${user.userDetails}`)
-    .then(r => r.json() as Promise<Invoice[]>)
-    .then((data: Invoice[]) => setData(data))
+    .then<Invoice[] | string>((r) => {
+      const ct = r.headers.get("content-type") || "";
+      return ct.includes("application/json")
+        ? (r.json() as Promise<Invoice[]>)
+        : r.text();
+    })
+    .then((data) => setData(data))
     .catch(console.error)
   }, [invTab, user]);
 
