@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 //   values: InvoiceData;
 // }
 
-interface Invoice {
+export interface Invoice {
   id: string;
   status: string;
   inv_name: string;
@@ -33,6 +33,8 @@ interface Invoice {
 
 export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   const [data, setData] = useState<Invoice[] | string>("");
+  const [referrer, setReferrer] = useState<string>("");
+  setReferrer(invTab);
   const user = getUser(); 
 
   useEffect(() => {
@@ -79,7 +81,7 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
               {data.map(inv => (
                 <tr>
                   <td>
-                    <Link to={`/invoice/${inv.id}`}>View</Link>
+                    <Link to={`/invoice/${inv.id}?ref=${referrer}`}>View</Link>
                   </td>
                   <td title={inv.id}>
                     {inv.id.substring(0,8) + "..."}
