@@ -6,6 +6,7 @@ import { TopBar } from "./components/Topbar";
 import Invoices from "./pages/Invoices";
 import { Container } from "react-bootstrap";
 import HelpSupport from "./pages/HelpAndSupport";
+import InvoicePage from "./pages/InvoicePage";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/invoices/:invTab" element={<Invoices />} />
           <Route path="/helpSupport" element={<HelpSupport />} />
+          <Route path="/invoice/:id" element={<InvoicePage />} />
         </Routes>
       </Container>
       {/* </div> */}
