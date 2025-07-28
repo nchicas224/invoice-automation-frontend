@@ -8,7 +8,7 @@ export default function InvoiceNav(){
             expand={false}
             className="flex-column flex-fill min-vh-100 bg-dark bg-gradient"
         >
-            <Nav className="flex-column w-100 p-4 fw-semibold">
+            <Nav variant="pills" className="flex-column w-100 p-4 fw-semibold">
                 <Nav.Link as={Link} to="/invoices/to-do">
                     To Do
                 </Nav.Link>
