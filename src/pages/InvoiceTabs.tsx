@@ -34,11 +34,11 @@ export interface Invoice {
 export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   const [data, setData] = useState<Invoice[] | string>("");
   const [referrer, setReferrer] = useState<string>("");
-  setReferrer(invTab);
   const user = getUser(); 
 
   useEffect(() => {
     if (!user) return;
+    setReferrer(invTab);
     fetch(`/api/getInvoiceList?tab=${invTab}&currentUser=${user.userDetails}`)
     .then<Invoice[] | string>((r) => {
       const ct = r.headers.get("content-type") || "";
