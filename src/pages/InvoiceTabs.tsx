@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getUser } from "../hooks/UserContext";
 import LoadSpinner from "../components/LoadingSpinner";
 import Table from "react-bootstrap/Table";
+import { Card } from "react-bootstrap";
 
 // interface InvoiceData {
 //   id: string;
@@ -55,37 +56,41 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
   }
 
   return (
-    <div className="table-responsive rounded-top-5 rounded-bottom-5 overflow-hidden">
-      <Table striped borderless hover variant="light" className="invoice-list-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Invoice #</th>
-            <th>Invoice Name</th>
-            <th>Vendor</th>
-            <th>Amount</th>
-            <th>Invoice Date</th>
-            <th>Due Date</th>
-            <th>Date Created</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map(inv => (
-            <tr>
-              <td title={inv.id}>{inv.id.substring(0,8) + "..."}</td>
-              <td>{inv.inv_num}</td>
-              <td>{inv.inv_name}</td>
-              <td>{inv.vendor}</td>
-              <td>{inv.amount}</td>
-              <td>{inv.inv_date}</td>
-              <td>{inv.due_date}</td>
-              <td>{inv.creation_date}</td>
-              <td>{inv.status}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+    <div className="table-responsive">
+      <Card>
+        <Card.Body>
+          <Table striped borderless hover variant="light" className="invoice-list-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Invoice #</th>
+                <th>Invoice Name</th>
+                <th>Vendor</th>
+                <th>Amount</th>
+                <th>Invoice Date</th>
+                <th>Due Date</th>
+                <th>Date Created</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map(inv => (
+                <tr>
+                  <td title={inv.id}>{inv.id.substring(0,8) + "..."}</td>
+                  <td>{inv.inv_num}</td>
+                  <td>{inv.inv_name}</td>
+                  <td>{inv.vendor}</td>
+                  <td>{inv.amount}</td>
+                  <td>{inv.inv_date}</td>
+                  <td>{inv.due_date}</td>
+                  <td>{inv.creation_date}</td>
+                  <td>{inv.status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Card.Body>
+      </Card>
     </div>
   );
 }
