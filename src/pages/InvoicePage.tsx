@@ -8,7 +8,7 @@ export function InvoicePage(){
 
     const goBack= () => {
         if (referrer){
-            navigate(`invoice/${referrer}`);
+            navigate(`invoices/${referrer}`);
         } else {
             navigate(-1);
         }
