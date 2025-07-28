@@ -83,7 +83,7 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
                   <td>{inv.amount}</td>
                   <td>{inv.inv_date}</td>
                   <td>{inv.due_date}</td>
-                  <td>{inv.creation_date}</td>
+                  <td>{new Date(inv.creation_date).toLocaleDateString()}</td>
                   <td>{inv.status}</td>
                 </tr>
               ))}
