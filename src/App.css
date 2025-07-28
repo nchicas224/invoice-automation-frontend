@@ -24,3 +24,9 @@
   --bs-table-hover-bg: #74afe9;
   border-color: var(--lcf-bs-table-border-color) !important;
 }
+
+.sidebar-nav {
+  --bs-nav-link-padding-x: 0.5rem !important;
+  --bs-nav-link-padding-y: 0.5rem !important;
+  --bs-nav-pills-link-active-bg: var(--lcf-bg-light);
+}
