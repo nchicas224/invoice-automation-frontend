@@ -7,6 +7,7 @@ export function InvoicePage(){
     const { id } = useParams<{ id: string }>();
     const urlQ = new URLSearchParams(useLocation().search);
     const referrer = urlQ.get("ref");
+    let navigate = useNavigate();
     const location = useLocation();
     const stateInvoice = (location.state as { invoice?: Invoice})?.invoice;
 
@@ -36,8 +37,6 @@ export function InvoicePage(){
 
     if (!invoice) return <h1>No invoice found</h1>
 
-
-    let navigate = useNavigate();
     const goBack= () => {
         if (referrer){
             navigate(`/invoices/${referrer}`);
