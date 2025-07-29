@@ -27,6 +27,8 @@ export function InvoicePage(){
             return;
         }
 
+        setInvoice(null);
+        setLoading(false);
         return; //Create Fetch API for singleton invoice as final fallback.
     },[id, stateInvoice]);
 
