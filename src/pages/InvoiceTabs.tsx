@@ -81,7 +81,14 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
               {data.map(inv => (
                 <tr>
                   <td>
-                    <Link to={`/invoice/${inv.id}?ref=${referrer}`}>View</Link>
+                    <Link to={`/invoice/${inv.id}?ref=${referrer}`}
+                    state={{ invoice: inv}}
+                    onClick={() => {
+                      localStorage.setItem(`inv-id:${inv.id}`, JSON.stringify(inv));
+                    }}
+                    >
+                    View
+                    </Link>
                   </td>
                   <td title={inv.id}>
                     {inv.id.substring(0,8) + "..."}
