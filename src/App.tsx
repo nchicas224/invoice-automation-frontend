@@ -7,9 +7,19 @@ import Invoices from "./pages/Invoices";
 import { Container } from "react-bootstrap";
 import HelpSupport from "./pages/HelpAndSupport";
 import InvoicePage from "./pages/InvoicePage";
+import { useEffect, useState } from "react";
+import LoadSpinner from "./components/LoadingSpinner";
 
 
 function App() {
+  const [ loading, setLoading ] = useState(true);
+
+  useEffect(() => {
+    fetch("/.auth/me")
+      .then(() => setLoading(false))
+  });
+
+  if (loading) return <LoadSpinner/>
 
   return (
     <>
