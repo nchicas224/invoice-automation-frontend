@@ -3,6 +3,12 @@ import type { Invoice } from "./InvoiceTabs";
 import { useEffect, useState } from "react";
 import LoadSpinner from "../components/LoadingSpinner";
 
+
+interface Pdfs{
+    inv_sas: string;
+    cr_sas: string;
+}
+
 export function InvoicePage(){
     const { id } = useParams<{ id: string }>();
     const urlQ = new URLSearchParams(useLocation().search);
@@ -11,20 +17,20 @@ export function InvoicePage(){
     const location = useLocation();
     const stateInvoice = (location.state as { invoice?: Invoice})?.invoice;
 
-    const [ invoice, setInvoice ] = useState< Invoice | null>(null);
+    const [ invoice, setInvoice ] = useState< Invoice | null >(null);
     const [ loading, setLoading ] = useState(true);
+
+    const [ pdfs, setPdfs] = useState< Pdfs | null >(null);
 
     useEffect(() => {
         if (stateInvoice){
             setInvoice(stateInvoice);
-            setLoading(false);
             return;
         }
 
         const raw = localStorage.getItem(`inv-id:${id}`);
         if (raw){
             setInvoice(JSON.parse(raw));
-            setLoading(false);
             return;
         }
 
@@ -33,9 +39,20 @@ export function InvoicePage(){
         return; //Create Fetch API for singleton invoice as final fallback.
     },[id]);
 
+    useEffect(() => {
+        if (invoice){
+            fetch(`/api/getInvoicePage?ib=${invoice.inv_blob}&cb=${invoice.cr_blob}&icn=${invoice.inv_container}&ccn=${invoice.cr_container}`)
+            .then(r => r.json())
+            .then(data => setPdfs(data))
+            setLoading(false);
+        }
+    }, [invoice]);
+
     if (loading) return <LoadSpinner/>;
 
     if (!invoice) return <h1>No invoice found</h1>
+
+
 
     const goBack= () => {
         if (referrer){
@@ -50,6 +67,7 @@ export function InvoicePage(){
             <button onClick={goBack}>Back to List</button>
             <h1>Invoice Page: {invoice?.id}</h1>
             <p>Invoice Date: {invoice.creation_date}</p>
+            <embed src={pdfs?.inv_sas}>test</embed>
         </div>
     );
 }

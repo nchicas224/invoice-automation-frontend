@@ -27,6 +27,10 @@ export interface Invoice {
   inv_date: string;
   due_date: string;
   creation_date: string;
+  inv_blob: string;
+  inv_container: string;
+  cr_container: string;
+  cr_blob: string;
 }
 
 //type InvoiceList = InvoiceResp[];
