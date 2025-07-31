@@ -67,7 +67,7 @@ export function InvoicePage(){
             <button onClick={goBack}>Back to List</button>
             <h1>Invoice Page: {invoice?.id}</h1>
             <p>Invoice Date: {invoice.creation_date}</p>
-            <embed src={pdfs?.inv_sas}>test</embed>
+            <embed src={pdfs?.inv_sas} type="application/pdf"/>
         </div>
     );
 }
