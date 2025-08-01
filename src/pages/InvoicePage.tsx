@@ -67,7 +67,7 @@ export function InvoicePage(){
             <button onClick={goBack}>Back to List</button>
             <h1>Invoice Page: {invoice?.id}</h1>
             <p>Invoice Date: {invoice.creation_date}</p>
-            <iframe src={pdfs?.inv_sas} title={invoice.inv_name} sandbox="allow-same-origin allow-scripts"/>
+            <iframe src={pdfs?.inv_sas} title={invoice.inv_name} sandbox="allow-same-origin"/>
         </div>
     );
 }
