@@ -2,6 +2,7 @@ import { useLocation, useParams, useNavigate } from "react-router-dom";
 import type { Invoice } from "./InvoiceTabs";
 import { useEffect, useState } from "react";
 import LoadSpinner from "../components/LoadingSpinner";
+import { PdfViewer } from "../components/PdfViewer";
 
 
 interface Pdfs{
@@ -67,7 +68,12 @@ export function InvoicePage(){
             <button onClick={goBack}>Back to List</button>
             <h1>Invoice Page: {invoice?.id}</h1>
             <p>Invoice Date: {invoice.creation_date}</p>
-            <iframe src={pdfs?.inv_sas} title={invoice.inv_name} sandbox="allow-same-origin"/>
+            {!(pdfs?.inv_sas && pdfs?.cr_sas) ? (
+                <p>No data found</p>
+            ) : <div>
+                    <PdfViewer fileUrl={pdfs.inv_sas}/>
+                    <PdfViewer fileUrl={pdfs.cr_sas}/>
+                </div>}
         </div>
     );
 }

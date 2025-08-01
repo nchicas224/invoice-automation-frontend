@@ -7,6 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import PageSetter from "./hooks/userPageTitle.tsx";
 import { UserProfile } from "./hooks/UserContext.tsx";
+import { pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
