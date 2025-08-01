@@ -3,13 +3,13 @@ import { Document, Page } from "react-pdf";
 import LoadSpinner from "./LoadingSpinner";
 
 type PdfViewerProps = {
-    fileUrl: string;
+    fileBytes: ArrayBuffer;
     width?: number;
     height?: number;
 };
 
 export function PdfViewer({
-    fileUrl,
+    fileBytes,
     width = 600,
     height = 800
 }: PdfViewerProps){
@@ -29,7 +29,7 @@ export function PdfViewer({
             }}
         >
             <Document
-                file={fileUrl}
+                file={fileBytes}
                 onLoadSuccess={onDocumentLoadSuccess}
                 loading={<LoadSpinner/>}
                 error={<p>Failed to load PDFs</p>}

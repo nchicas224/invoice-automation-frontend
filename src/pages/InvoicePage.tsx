@@ -3,12 +3,8 @@ import type { Invoice } from "./InvoiceTabs";
 import { useEffect, useState } from "react";
 import LoadSpinner from "../components/LoadingSpinner";
 import { PdfViewer } from "../components/PdfViewer";
+import JSZip from "jszip";
 
-
-interface Pdfs{
-    inv_sas: string;
-    cr_sas: string;
-}
 
 export function InvoicePage(){
     const { id } = useParams<{ id: string }>();
@@ -21,7 +17,8 @@ export function InvoicePage(){
     const [ invoice, setInvoice ] = useState< Invoice | null >(null);
     const [ loading, setLoading ] = useState(true);
 
-    const [ pdfs, setPdfs] = useState< Pdfs | null >(null);
+    const [ invoiceData, setInvoiceData ] = useState< ArrayBuffer | null >(null);
+    const [ checkData, setCheckData ] = useState< ArrayBuffer | null >(null);
 
     useEffect(() => {
         if (stateInvoice){
@@ -36,24 +33,35 @@ export function InvoicePage(){
         }
 
         setInvoice(null);
-        setLoading(false);
         return; //Create Fetch API for singleton invoice as final fallback.
     },[id]);
 
     useEffect(() => {
-        if (invoice){
-            fetch(`/api/getInvoicePage?ib=${invoice.inv_blob}&cb=${invoice.cr_blob}&icn=${invoice.inv_container}&ccn=${invoice.cr_container}`)
-            .then(r => r.json())
-            .then(data => setPdfs(data))
-            setLoading(false);
+        async function loadZip(){
+            try {
+                if (!invoice) return;
+                const resp = await fetch(`/api/getInvoicePage?id=${invoice.id}&ib=${invoice.inv_blob}&cb=${invoice.cr_blob}&icn=${invoice.inv_container}&ccn=${invoice.cr_container}`);
+                if (!resp.ok) throw new Error("Failed to load ZIP");
+                const zipBytes = await resp.arrayBuffer();
+
+                const zip = await JSZip().loadAsync(zipBytes);
+                const invoiceByteBuffer = await zip.file(invoice.inv_blob)!.async("arraybuffer");
+                const checkByteBuffer = await zip.file(invoice.cr_blob)!.async("arraybuffer");
+
+                setInvoiceData(invoiceByteBuffer);
+                setCheckData(checkByteBuffer);
+            } catch (err){
+                console.error(err);
+            } finally {
+                setLoading(false);
+            }
         }
+        loadZip();
     }, [invoice]);
 
     if (loading) return <LoadSpinner/>;
 
-    if (!invoice) return <h1>No invoice found</h1>
-
-
+    if (!invoice || !invoiceData || !checkData) return <h1>No invoice found</h1>
 
     const goBack= () => {
         if (referrer){
@@ -68,12 +76,8 @@ export function InvoicePage(){
             <button onClick={goBack}>Back to List</button>
             <h1>Invoice Page: {invoice?.id}</h1>
             <p>Invoice Date: {invoice.creation_date}</p>
-            {!(pdfs?.inv_sas && pdfs?.cr_sas) ? (
-                <p>No data found</p>
-            ) : <div>
-                    <PdfViewer fileUrl={pdfs.inv_sas}/>
-                    <PdfViewer fileUrl={pdfs.cr_sas}/>
-                </div>}
+            <PdfViewer fileBytes={invoiceData}/>
+            <PdfViewer fileBytes={checkData}/>
         </div>
     );
 }
