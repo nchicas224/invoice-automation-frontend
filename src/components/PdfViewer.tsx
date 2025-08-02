@@ -14,6 +14,16 @@ export function PdfViewer({
     height = 800
 }: PdfViewerProps){
     const [ numPages, setNumPages ] = useState(0);
+    const [ err, setErr ] = useState<string|null>(null);
+
+    if (err){
+        return (
+            <div>
+                <h4>Failed to Load PDF</h4>
+                <p>{err}</p>
+            </div>
+        )
+    }
 
     function onDocumentLoadSuccess({numPages}: {numPages: number}){
         setNumPages(numPages);
@@ -32,7 +42,8 @@ export function PdfViewer({
                 file={fileBytes}
                 onLoadSuccess={onDocumentLoadSuccess}
                 loading={<LoadSpinner/>}
-                error={<p>Failed to load PDFs</p>}
+                onSourceError={(err: Error) => setErr(err.message)}
+                onLoadError={(err: Error) => setErr(err.message)}
             >
                 {Array.from({ length: numPages }, (_,i) => (
                     <Page
