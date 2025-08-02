@@ -50,7 +50,7 @@ export function PdfViewer({
                         key={i}
                         pageNumber={i+1}
                         width={width}
-                        renderTextLayer={true}
+                        renderTextLayer={false}
                         renderAnnotationLayer={false}
                         className="mb-3"
                     />
