@@ -61,7 +61,9 @@ export function InvoicePage(){
 
     if (loading) return <LoadSpinner/>;
 
-    if (!invoice || !invoiceData || !checkData) return <h1>No invoice found</h1>
+    if (!invoice) return <h1>No invoice found</h1>
+
+    if (!invoiceData || !checkData) return <h1>Failed to retrieve invoice data</h1>
 
     const goBack= () => {
         if (referrer){
