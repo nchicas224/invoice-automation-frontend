@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import LoadSpinner from "../components/LoadingSpinner";
 import { PdfViewer } from "../components/PdfViewer";
 import JSZip from "jszip";
+import { Card, CardGroup } from "react-bootstrap";
 
 
 export function InvoicePage(){
@@ -77,8 +78,14 @@ export function InvoicePage(){
             <button onClick={goBack}>Back to List</button>
             <h1>Invoice Page: {invoice?.id}</h1>
             <p>Invoice Date: {invoice.creation_date}</p>
-            <PdfViewer fileBytes={invoiceData}/>
-            <PdfViewer fileBytes={checkData}/>
+            <CardGroup>
+            <Card>
+                <PdfViewer fileBytes={invoiceData}/>
+            </Card>
+            <Card>
+                <PdfViewer fileBytes={checkData}/>
+            </Card>
+            </CardGroup>
         </div>
     );
 }
