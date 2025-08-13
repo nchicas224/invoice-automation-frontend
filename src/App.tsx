@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     fetch("/.auth/me")
       .then(() => setLoading(false))
-  });
+  },[]);
 
   if (loading) return <LoadSpinner/>
 
