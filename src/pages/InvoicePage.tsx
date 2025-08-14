@@ -9,9 +9,6 @@ import { type LayoutCtx } from "../types/layout-types";
 
 export function InvoicePage() {
   const { id } = useParams<{ id: string }>();
-  const urlQ = new URLSearchParams(useLocation().search);
-  const referrer = urlQ.get("ref");
-  let navigate = useNavigate();
   const location = useLocation();
   const stateInvoice = (location.state as { invoice?: Invoice })?.invoice;
 
@@ -74,14 +71,6 @@ export function InvoicePage() {
   if (!invoiceData || !checkData)
     return <h1>Failed to retrieve invoice data</h1>;
 
-  const goBack = () => {
-    if (referrer) {
-      navigate(`/invoices/${referrer}`);
-    } else {
-      navigate(-1);
-    }
-  };
-
   useEffect(() => {
     setHeaderTitle(invoice?.inv_name);
     return () => setHeaderTitle("Invoice");
@@ -89,7 +78,6 @@ export function InvoicePage() {
 
   return (
     <div>
-      <button onClick={goBack}>Back to List</button>
       <h1>Invoice Page: {invoice?.id}</h1>
       <p>Invoice Date: {invoice.creation_date}</p>
       <CardGroup>
