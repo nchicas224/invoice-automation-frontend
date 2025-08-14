@@ -23,12 +23,12 @@ export default function BaseSectionLayout({
     return (
     <Container fluid className="px-0">
       <Row className="g-0 align-items-stretch">
-        <Col xs="auto" className="px-0 d-flex">
+        <Col xs="auto" className="px-0 flex-shrink-0" style={{width: 200}}>
           <SidebarNav items={sidebarItems} extra={extraSidebar}/>
         </Col>
       
 
-        <Col className="p-4">
+        <Col className="p-4 flex-grow 1">
           <Row className="border-bottom border-2 border-dark">
             <Col className="p-0">
               <h1 className="text-start">{title}</h1>
