@@ -44,8 +44,8 @@ function App() {
             </Route>
 
              {/* Invoice page section */}
-            <Route path="/invoice/:id" element={<InvoicePageLayout />} >
-              <Route index element={<InvoicePage />}/>
+            <Route path="/invoice" element={<InvoicePageLayout />} >
+              <Route path=":id" element={<InvoicePage />}/>
             </Route>
 
             {/* Support page section */}
