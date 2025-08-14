@@ -14,7 +14,7 @@ export default function SidebarNav({items, extra}: { items: NavItem[]; extra?: R
         <Navbar
             variant="dark" 
             expand={false}
-            className="flex-column min-vh-100 bg-dark bg-gradient"
+            className="flex-column flex-fill min-vh-100 bg-dark bg-gradient"
         >
             <Nav variant="pills" className="flex-column w-100 p-4 fw-semibold sidebar-nav">
                 {items.map((it) => 
