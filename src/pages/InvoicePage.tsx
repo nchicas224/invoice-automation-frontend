@@ -71,10 +71,10 @@ export function InvoicePage() {
   if (!invoiceData || !checkData)
     return <h1>Failed to retrieve invoice data</h1>;
 
-  useEffect(() => {
-    setHeaderTitle(invoice?.inv_name);
-    return () => setHeaderTitle("Invoice");
-  },[invoice, setHeaderTitle]);
+  // useEffect(() => {
+  //   setHeaderTitle(invoice?.inv_name);
+  //   return () => setHeaderTitle("Invoice");
+  // },[invoice, setHeaderTitle]);
 
   return (
     <div>
