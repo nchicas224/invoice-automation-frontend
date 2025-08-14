@@ -46,7 +46,7 @@ export function InvoicePage() {
         if (!resp.ok) throw new Error("Failed to load ZIP");
         const zipBytes = await resp.arrayBuffer();
 
-        const zip = await JSZip().loadAsync(zipBytes);
+        const zip = await JSZip.loadAsync(zipBytes);
         const invoiceByteBuffer = await zip
           .file(invoice.inv_blob)!
           .async("arraybuffer");
@@ -64,18 +64,18 @@ export function InvoicePage() {
     loadZip();
   }, [invoice]);
 
+  useEffect(() => {
+    const title = invoice?.inv_name ?? "Invoice";
+    setHeaderTitle(title);
+    return () => setHeaderTitle("Invoice");
+  },[invoice?.inv_name, setHeaderTitle]);
+
   if (loading) return <LoadSpinner />;
 
   if (!invoice) return <h1>No invoice found</h1>;
 
   if (!invoiceData || !checkData)
     return <h1>Failed to retrieve invoice data</h1>;
-
-  useEffect(() => {
-    const title = invoice?.inv_name || "Invoice";
-    setHeaderTitle(title);
-    return () => setHeaderTitle("Invoice");
-  },[invoice?.inv_name, setHeaderTitle]);
 
   return (
     <div>
