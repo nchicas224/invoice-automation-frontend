@@ -28,7 +28,7 @@ export default function BaseSectionLayout({
         </Col>
       
 
-        <Col className="p-4 flex-grow 1">
+        <Col className="p-4 flex-grow-1">
           <Row className="border-bottom border-2 border-dark">
             <Col className="p-0">
               <h1 className="text-start">{title}</h1>
