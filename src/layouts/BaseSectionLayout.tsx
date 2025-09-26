@@ -22,8 +22,8 @@ export default function BaseSectionLayout({
     
     return (
     <Container fluid className="px-0">
-      <Row className="g-0 align-items-stretch">
-        <Col xs="auto" className="px-0 flex-shrink-0 h-100" style={{width: 200}}>
+      <Row className="g-0 align-items-stretch min-vh-100">
+        <Col xs="auto" className="px-0 flex-shrink-0 d-flex" style={{width: 200}}>
           <SidebarNav items={sidebarItems} extra={extraSidebar}/>
         </Col>
       
