@@ -10,7 +10,7 @@ export function ApproveButton(){
 
 export function EditButton(){
     return (
-        <Button>
+        <Button variant="secondary">
             Edit
         </Button>
     )
