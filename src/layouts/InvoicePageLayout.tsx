@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import BaseSectionLayout from "./BaseSectionLayout";
 import { useCallback, useMemo } from "react";
+import { ApproveButton, EditButton } from "../components/Buttons";
 
 
 
@@ -23,10 +24,10 @@ export default function InvoicePageLayout() {
     );
  
     const headerActions = 
-        <>
-            <button type="button" className="btn btn-success">Approve</button>
-            <button type="button" className="btn btn-warning">Edit</button>
-        </>
+        <div className="px-2 d-flex">
+            <ApproveButton />
+            <EditButton />
+        </div>
 
     return (
         <BaseSectionLayout
