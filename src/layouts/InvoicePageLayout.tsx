@@ -21,10 +21,17 @@ export default function InvoicePageLayout() {
         () => [{label: "Back to list", onClick: goBack}],
         [goBack]
     );
+ 
+    const headerActions = 
+        <>
+            <button type="button" className="btn btn-success">Approve</button>
+            <button type="button" className="btn btn-warning">Edit</button>
+        </>
 
     return (
         <BaseSectionLayout
         sidebarItems={INV_DETAIL_NAV}
+        headerActions={headerActions}
         defaultTitle="Invoice"
         />
     );

@@ -79,8 +79,6 @@ export function InvoicePage() {
 
   return (
     <div>
-      <h1>Invoice Page: {invoice?.id}</h1>
-      <p>Invoice Date: {invoice.creation_date}</p>
       <CardGroup>
         <Card>
           <PdfViewer fileBytes={invoiceData} />
