@@ -81,7 +81,7 @@ export function InvoicePage() {
     <div className="justify-content-start">
       <CardGroup>
         <Card>
-          <PdfViewer fileBytes={invoiceData} />
+          <PdfViewer fileBytes={invoiceData} width={900} />
         </Card>
         <Card>
           <PdfViewer fileBytes={checkData} />
