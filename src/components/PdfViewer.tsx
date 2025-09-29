@@ -49,7 +49,7 @@ export function PdfViewer({
                     <Page
                         key={i}
                         pageNumber={i+1}
-                        width={width}
+                        //width={width}
                         renderTextLayer={false}
                         renderAnnotationLayer={false}
                         className="mb-3"
