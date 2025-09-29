@@ -79,14 +79,12 @@ export function InvoicePage() {
 
   return (
     <div className="px-0 justify-content-start">
-      <CardGroup>
-        <Card className="flex-fill">
-          <PdfViewer fileBytes={invoiceData} />
-        </Card>
-        <Card className="flex-fill">
-          <PdfViewer fileBytes={checkData} />
-        </Card>
-      </CardGroup>
+      <Card className="flex-fill me-2">
+        <PdfViewer fileBytes={invoiceData} />
+      </Card>
+      <Card className="flex-fill ms-2">
+        <PdfViewer fileBytes={checkData} />
+      </Card>
     </div>
   );
 }

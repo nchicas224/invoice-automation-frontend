@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Document, Page } from "react-pdf";
 import LoadSpinner from "./LoadingSpinner";
+import { useElementWidth } from "../hooks/useElementWidth";
 
 type PdfViewerProps = {
     fileBytes: ArrayBuffer;
@@ -10,11 +11,11 @@ type PdfViewerProps = {
 
 export function PdfViewer({
     fileBytes,
-    width = 600,
     height = 800
 }: PdfViewerProps){
     const [ numPages, setNumPages ] = useState(0);
     const [ err, setErr ] = useState<string|null>(null);
+    const { ref, width = 600 } = useElementWidth<HTMLDivElement>(); 
 
     if (err){
         return (
@@ -31,8 +32,8 @@ export function PdfViewer({
 
     return (
         <div
+            ref={ref}
             style={{
-                width,
                 height,
                 overflowY: "auto",
                 border: "1px solid #ccc",
@@ -49,7 +50,7 @@ export function PdfViewer({
                     <Page
                         key={i}
                         pageNumber={i+1}
-                        //width={width}
+                        width={width}
                         renderTextLayer={false}
                         renderAnnotationLayer={false}
                         className="mb-3"
