@@ -1,4 +1,4 @@
-import { useLocation, useParams, useNavigate, useOutletContext } from "react-router-dom";
+import { useLocation, useParams, useOutletContext } from "react-router-dom";
 import type { Invoice } from "../components/InvoiceTabs";
 import { useEffect, useState } from "react";
 import LoadSpinner from "../components/LoadingSpinner";
@@ -78,7 +78,7 @@ export function InvoicePage() {
     return <h1>Failed to retrieve invoice data</h1>;
 
   return (
-    <div>
+    <div className="justify-content-start">
       <CardGroup>
         <Card>
           <PdfViewer fileBytes={invoiceData} />
