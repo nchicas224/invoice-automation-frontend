@@ -24,7 +24,7 @@ export default function InvoicePageLayout() {
     );
  
     const headerActions = 
-        <div className="px-2 d-flex">
+        <div className="p-2 gap-3 d-flex">
             <ApproveButton />
             <EditButton />
         </div>
