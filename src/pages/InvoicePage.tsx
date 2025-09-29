@@ -78,12 +78,12 @@ export function InvoicePage() {
     return <h1>Failed to retrieve invoice data</h1>;
 
   return (
-    <div className="justify-content-start">
+    <div className="px-0 justify-content-start">
       <CardGroup>
-        <Card>
-          <PdfViewer fileBytes={invoiceData} width={900} />
+        <Card className="flex-fill">
+          <PdfViewer fileBytes={invoiceData} />
         </Card>
-        <Card>
+        <Card className="flex-fill">
           <PdfViewer fileBytes={checkData} />
         </Card>
       </CardGroup>
