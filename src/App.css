@@ -37,13 +37,13 @@
 }
 
 .invoice-page-tabs .nav-link:not(.active){
-  background-color: var(--lcf-bg-dark);
+  background-color: var(--bs-dark);
   background-image: var(--bs-gradient);
   color: #ffffff8c;
 }
 
 .invoice-page-tabs .nav-link.active {
-  background-color: var(--bs-dark);
+  background-color: var(--lcf-bg-tert);
   background-image: var(--bs-gradient);
-  color: #ffffff8c;
+  color: #ffffff;
 }
