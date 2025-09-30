@@ -32,8 +32,8 @@
 }
 
 .invoice-page-tabs .nav .nav-tabs {
-  border-top-left-radius: .675rem;
-  border-top-right-radius: .675rem;
+  border-top-left-radius: .675rem !important;
+  border-top-right-radius: .675rem !important;
 }
 
 .invoice-page-tabs .nav-link:not(.active){
