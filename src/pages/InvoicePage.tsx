@@ -5,6 +5,8 @@ import LoadSpinner from "../components/LoadingSpinner";
 import { PdfViewer } from "../components/PdfViewer";
 import JSZip from "jszip";
 import { Card, CardGroup, Col, Row } from "react-bootstrap";
+import Tab from "react-bootstrap/Tab"
+import Tabs from "react-bootstrap/Tabs"
 import { type LayoutCtx } from "../types/layout-types";
 
 export function InvoicePage() {
@@ -19,6 +21,8 @@ export function InvoicePage() {
   const [checkData, setCheckData] = useState<ArrayBuffer | null>(null);
 
   const { setHeaderTitle } = useOutletContext<LayoutCtx>();
+
+  const [active, setActive] = useState<string>("checkRequest");
 
   useEffect(() => {
     if (stateInvoice) {
@@ -80,14 +84,27 @@ export function InvoicePage() {
   return (
     <Row className="g-3 w-100">
       <Col md={6} className="min-w-0">
-        <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
-          <PdfViewer fileBytes={invoiceData} />
-        </Card>
+        <Tabs className="mb-3">
+          <Tab eventKey="invoice" title="Invoice">
+            <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
+              <PdfViewer fileBytes={invoiceData} />
+            </Card>
+          </Tab>
+        </Tabs>
       </Col>
       <Col md={6} className="min-w-0">
-        <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
-          <PdfViewer fileBytes={checkData} />
-        </Card>
+        <Tabs activeKey={active} onSelect={(t) => setActive(t!)}className="mb-3">
+          <Tab eventKey="checkRequest" title="Check Request">
+            <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
+              <PdfViewer fileBytes={checkData} />
+            </Card>
+          </Tab>
+          <Tab eventKey="editCheckRequest" title="Edit">
+            <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
+              <h1>EDIT FORM HERE</h1>
+            </Card>
+          </Tab>
+        </Tabs>
       </Col>
     </Row>
   );
