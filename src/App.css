@@ -38,13 +38,13 @@
   background-image: var(--bs-gradient), linear-gradient(var(--bs-dark), var(--bs-dark));
 }
 
-.invoice-page-tabs .nav-link:not(.active){
+.invoice-page-tabs .nav-tabs .nav-link:not(.active){
   background-color: var(--lcf-bg-dark);
   background-image: var(--bs-gradient);
   color: #ffffff8c;
 }
 
-.invoice-page-tabs .nav-link.active {
+.invoice-page-tabs .nav-tabs .nav-link.active {
   background-color: var(--bs-dark);
   background-image: var(--bs-gradient);
   color: #ffffff8c;
