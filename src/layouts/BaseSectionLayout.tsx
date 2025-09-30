@@ -30,10 +30,10 @@ export default function BaseSectionLayout({
 
         <Col className="p-4 flex-grow-1 h-100 min-w-0 d-flex flex-column">
           <Row className="border-bottom border-2 border-dark">
-            <Col className="p-0">
-              <h1 className="text-start">{title}</h1>
+            <Col className="p-0 min-w-0">
+              <h1 className="text-start mb-0 text-truncate fs-3 fs-lg-2">{title}</h1>
             </Col>
-            <Col className="p-0 ms-auto d-flex gap-2 justify-content-end">
+            <Col xs="auto" className="p-0 ms-auto d-flex gap-2 justify-content-end">
                 {headerActions}
             </Col>
           </Row>
