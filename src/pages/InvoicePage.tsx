@@ -84,7 +84,7 @@ export function InvoicePage() {
   return (
     <Row className="g-3 w-100">
       <Col md={6} className="min-w-0">
-        <Tabs className="mb-3">
+        <Tabs className="mb-3 sidebar-nav">
           <Tab eventKey="invoice" title="Invoice">
             <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
               <PdfViewer fileBytes={invoiceData} />
