@@ -84,8 +84,8 @@ export function InvoicePage() {
   return (
     <Row className="g-3 w-100">
       <Col md={6} className="min-w-0">
-        <Tabs className="mb-3 bg-dark bg-gradient invoice-page-tabs">
-          <Tab eventKey="invoice" title="Invoice">
+        <Tabs className="invoice-page-tabs-border">
+          <Tab eventKey="invoice" title="Invoice" className="bg-dark bg-gradient invoice-page-tabs">
             <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
               <PdfViewer fileBytes={invoiceData} />
             </Card>
@@ -93,13 +93,13 @@ export function InvoicePage() {
         </Tabs>
       </Col>
       <Col md={6} className="min-w-0">
-        <Tabs activeKey={active} onSelect={(t) => setActive(t!)} className="mb-3 bg-dark bg-gradient invoice-page-tabs">
-          <Tab eventKey="checkRequest" title="Check Request">
+        <Tabs activeKey={active} onSelect={(t) => setActive(t!)} className="invoice-page-tabs-border">
+          <Tab eventKey="checkRequest" title="Check Request" className="bg-dark bg-gradient invoice-page-tabs">
             <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
               <PdfViewer fileBytes={checkData} />
             </Card>
           </Tab>
-          <Tab eventKey="editCheckRequest" title="Edit">
+          <Tab eventKey="editCheckRequest" title="Edit" className="bg-dark bg-gradient invoice-page-tabs">
             <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
               <h1>EDIT FORM HERE</h1>
             </Card>

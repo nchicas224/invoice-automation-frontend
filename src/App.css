@@ -31,10 +31,17 @@
   --bs-nav-pills-link-active-bg: var(--lcf-bg-light);
 }
 
+.invoice-page-tabs-border::after {
+  content: "";
+  display: block;
+  height: 1rem;
+  background-image: var(--bs-gradient), linear-gradient(var(--bs-dark), var(--bs-dark));
+}
+
 .invoice-page-tabs .nav-link:not(.active){
-  background-color: var(--lcf-bg-light);
+  background-color: var(--lcf-bg-dark);
   background-image: var(--bs-gradient);
-  color: #fff;
+  color: #ffffff8c;
 }
 
 .invoice-page-tabs .nav-link.active {
