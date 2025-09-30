@@ -84,7 +84,7 @@ export function InvoicePage() {
   return (
     <Row className="g-3 w-100">
       <Col md={6} className="min-w-0">
-        <Tabs className="mb-3 sidebar-nav">
+        <Tabs className="mb-3 bg-dark bg-gradient invoice-page-tabs">
           <Tab eventKey="invoice" title="Invoice">
             <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
               <PdfViewer fileBytes={invoiceData} />
@@ -93,7 +93,7 @@ export function InvoicePage() {
         </Tabs>
       </Col>
       <Col md={6} className="min-w-0">
-        <Tabs activeKey={active} onSelect={(t) => setActive(t!)}className="mb-3">
+        <Tabs activeKey={active} onSelect={(t) => setActive(t!)} className="mb-3 bg-dark bg-gradient invoice-page-tabs">
           <Tab eventKey="checkRequest" title="Check Request">
             <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
               <PdfViewer fileBytes={checkData} />

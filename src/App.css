@@ -30,3 +30,15 @@
   --bs-nav-link-padding-y: 0.5rem !important;
   --bs-nav-pills-link-active-bg: var(--lcf-bg-light);
 }
+
+.invoice-page-tabs .nav-link:not(.active){
+  background-color: var(--lcf-bg-light);
+  background-image: var(--bs-gradient);
+  color: #fff;
+}
+
+.invoice-page-tabs .nav-link.active {
+  background-color: var(--bs-dark);
+  background-image: var(--bs-gradient);
+  color: #ffffff8c;
+}
