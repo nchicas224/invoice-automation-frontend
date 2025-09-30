@@ -55,5 +55,5 @@
 .invoice-page-tabs ~ .tab-content {
   border: var(--bs-nav-tabs-border-width) solid var(--lcf-bg-tert);
   border-top: none;
-  border-radius: 0 0 .675rem .675rem;
+  border-radius: 0 .675rem 0 .675rem;
 }

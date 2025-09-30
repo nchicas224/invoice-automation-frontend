@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import LoadSpinner from "../components/LoadingSpinner";
 import { PdfViewer } from "../components/PdfViewer";
 import JSZip from "jszip";
-import { Card, CardGroup, Col, Row } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
 import { type LayoutCtx } from "../types/layout-types";

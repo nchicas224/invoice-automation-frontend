@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import BaseSectionLayout from "./BaseSectionLayout";
 import { useCallback, useMemo } from "react";
-import { ApproveButton, EditButton } from "../components/Buttons";
+//import { ApproveButton, EditButton } from "../components/Buttons";
 
 
 
@@ -23,11 +23,11 @@ export default function InvoicePageLayout() {
         [goBack]
     );
  
-    const headerActions = 
-        <div className="p-2 gap-3 d-flex">
-            <ApproveButton />
-            <EditButton />
-        </div>
+    // const headerActions = 
+    //     <div className="p-2 gap-3 d-flex">
+    //         <ApproveButton />
+    //         <EditButton />
+    //     </div>
 
     return (
         <BaseSectionLayout
