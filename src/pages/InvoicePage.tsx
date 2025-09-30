@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import LoadSpinner from "../components/LoadingSpinner";
 import { PdfViewer } from "../components/PdfViewer";
 import JSZip from "jszip";
-import { Card, CardGroup } from "react-bootstrap";
+import { Card, CardGroup, Col, Row } from "react-bootstrap";
 import { type LayoutCtx } from "../types/layout-types";
 
 export function InvoicePage() {
@@ -78,14 +78,18 @@ export function InvoicePage() {
     return <h1>Failed to retrieve invoice data</h1>;
 
   return (
-    <div className="d-flex px-0 gap-3 min-w-0">
-      <Card className="flex-grow-1" style={{flexBasis: 0, minWidth: 0}}>
-        <PdfViewer fileBytes={invoiceData} />
-      </Card>
-      <Card className="flex-grow-1" style={{flexBasis: 0, minWidth: 0}}>
-        <PdfViewer fileBytes={checkData} />
-      </Card>
-    </div>
+    <Row className="g-3 w-100">
+      <Col md={6} className="min-w-0">
+        <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
+          <PdfViewer fileBytes={invoiceData} />
+        </Card>
+      </Col>
+      <Col md={6} className="min-w-0">
+        <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
+          <PdfViewer fileBytes={checkData} />
+        </Card>
+      </Col>
+    </Row>
   );
 }
 
