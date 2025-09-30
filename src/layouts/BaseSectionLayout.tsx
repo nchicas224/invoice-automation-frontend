@@ -21,8 +21,8 @@ export default function BaseSectionLayout({
     const [ title, setTitle ] = useState(defaultTitle);
     
     return (
-    <Container fluid className="px- min-w-0">
-      <Row className="g-0 align-items-stretch min-vh-100 flex- w-100">
+    <Container fluid className="px-0 min-w-0">
+      <Row className="g-0 align-items-stretch min-vh-100 flex-nowrap w-100">
         <Col xs="auto" className="px-0 flex-shrink-0 d-flex" style={{width: 200}}>
           <SidebarNav items={sidebarItems} extra={extraSidebar}/>
         </Col>
