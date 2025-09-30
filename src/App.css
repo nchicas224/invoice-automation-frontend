@@ -44,7 +44,7 @@
 }
 
 .invoice-page-tabs .nav-link.active {
-  background-color: var(--lcf-bg-tert);
+  background-color: var(--lcf-bg-dark);
   background-image: var(--bs-gradient);
   color: #ffffff;
   margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
@@ -53,7 +53,6 @@
 
 .invoice-page-tabs + .tab-content,
 .invoice-page-tabs ~ .tab-content {
-  border: var(--bs-nav-tabs-border-width) solid var(--lcf-bg-tert);
-  border-top: none;
+  border-top: .2rem solid var(--lcf-bg-dark);
   border-radius: 0 .675rem 0 .675rem;
 }
