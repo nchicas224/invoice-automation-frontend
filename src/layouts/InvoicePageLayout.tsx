@@ -32,7 +32,7 @@ export default function InvoicePageLayout() {
     return (
         <BaseSectionLayout
         sidebarItems={INV_DETAIL_NAV}
-        headerActions={headerActions}
+        //headerActions={headerActions}
         defaultTitle="Invoice"
         />
     );
