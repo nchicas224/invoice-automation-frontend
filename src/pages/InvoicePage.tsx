@@ -78,7 +78,7 @@ export function InvoicePage() {
     return <h1>Failed to retrieve invoice data</h1>;
 
   return (
-    <div className="d-flex px-0 gap-3">
+    <div className="d-flex px-0 gap-3 min-w-0">
       <Card className="flex-grow-1" style={{flexBasis: 0, minWidth: 0}}>
         <PdfViewer fileBytes={invoiceData} />
       </Card>
