@@ -1,5 +1,5 @@
 /* Use this component layout to render the base frame that includes SideNavBar + Workspace */
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 import SidebarNav, { type NavItem } from "../components/SideBarNav";
 import type { LayoutCtx } from "../types/layout-types";
@@ -19,6 +19,7 @@ export default function BaseSectionLayout({
     headerActions,
 }: Props) {
     const [ title, setTitle ] = useState(defaultTitle);
+    const contentRef = useRef<HTMLDivElement | null>(null);
     
     return (
     <Container fluid className="px-0 min-w-0">
@@ -28,7 +29,7 @@ export default function BaseSectionLayout({
         </Col>
       
 
-        <Col className="p-4 flex-grow-1 h-100 min-w-0 d-flex flex-column">
+        <Col ref={contentRef} className="p-4 flex-grow-1 h-100 min-w-0 d-flex flex-column">
           <Row className="border-bottom border-2 border-dark">
             <Col className="p-0 min-w-0">
               <h1 className="text-start mb-0 text-truncate fs-3 fs-lg-2">{title}</h1>
@@ -39,7 +40,7 @@ export default function BaseSectionLayout({
           </Row>
           <Row className="d-flex">
             {/* Pass the setHeaderTitle function down to the children so they can set the context to the column above. */}
-            <Outlet context={{ setHeaderTitle: setTitle } satisfies LayoutCtx} />
+            <Outlet context={{ setHeaderTitle: setTitle, contentRef: contentRef } satisfies LayoutCtx} />
           </Row>
         </Col>
       </Row>

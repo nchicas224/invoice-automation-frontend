@@ -21,6 +21,7 @@ export function InvoicePage() {
   const [checkData, setCheckData] = useState<ArrayBuffer | null>(null);
 
   const { setHeaderTitle } = useOutletContext<LayoutCtx>();
+  const { contentRef } = useOutletContext<LayoutCtx>();
 
   const [active, setActive] = useState<string>("checkRequest");
 
@@ -73,6 +74,12 @@ export function InvoicePage() {
     setHeaderTitle(title);
     return () => setHeaderTitle("Invoice");
   },[invoice?.inv_name, setHeaderTitle]);
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      contentRef?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, []);
 
   if (loading) return <LoadSpinner />;
 
