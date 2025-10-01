@@ -34,6 +34,7 @@
 .invoice-page-tabs .nav.nav-tabs {
   border-top-left-radius: .675rem !important;
   border-top-right-radius: .675rem !important;
+  border-bottom: 0 !important;
 }
 
 .invoice-page-tabs .nav-link:not(.active){
@@ -41,6 +42,8 @@
   background-image: var(--bs-gradient);
   color: #ffffff8c;
   border-color: var(--bs-nav-tabs-link-active-border-color);
+  border-bottom-color: var(--lcf-bg-dark);
+  border-bottom-right-radius: 0.132rem;
 }
 
 .invoice-page-tabs .nav-link.active {
@@ -48,7 +51,7 @@
   background-image: var(--bs-gradient);
   color: #ffffff;
   margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
-  border: var(--bs-nav-tabs-border-width) solid transparent;
+  border: var(--bs-nav-tabs-border-width) solid var(--lcf-bg-dark);
 }
 
 .invoice-page-tabs + .tab-content,
