@@ -22,7 +22,8 @@ export function InvoiceTabPage() {
   useEffect(() => {
     const title = invTab && TITLES[invTab] ? TITLES[invTab] : "Invoices";
     setHeaderTitle(title);
-    return () => setHeaderTitle("Invoices");
+
+    return () => setHeaderTitle("Invoices"); //cleanup function, runs before next change or after unmount
   }, [invTab, setHeaderTitle]);
 
   return <InvoiceTab invTab={invTab ?? "pending"} />;

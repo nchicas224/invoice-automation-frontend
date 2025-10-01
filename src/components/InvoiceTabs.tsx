@@ -3,7 +3,7 @@ import { getUser } from "../hooks/UserContext";
 import LoadSpinner from "./LoadingSpinner";
 import Table from "react-bootstrap/Table";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 // interface InvoiceData {
 //   id: string;
@@ -91,7 +91,7 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
             {data.map((inv) => (
               <tr>
                 <td>
-                  <Link
+                  <NavLink
                     to={`/invoice/${inv.id}?ref=${referrer}`}
                     state={{ invoice: inv }}
                     onClick={() => {
@@ -100,9 +100,10 @@ export function InvoiceTab({ invTab }: { invTab: string }): React.ReactNode {
                         JSON.stringify(inv)
                       );
                     }}
+                    
                   >
                     View
-                  </Link>
+                  </NavLink>
                 </td>
                 <td title={inv.id}>{inv.id.substring(0, 8) + "..."}</td>
                 <td>{inv.inv_num}</td>
