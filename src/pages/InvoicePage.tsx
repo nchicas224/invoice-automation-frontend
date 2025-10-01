@@ -86,7 +86,7 @@ export function InvoicePage() {
       <Col md={6} className="min-w-0">
         <Tabs className="invoice-page-tabs">
           <Tab eventKey="invoice" title="Invoice">
-            <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
+            <Card className="h-100 invoice-page-cards">
               <PdfViewer fileBytes={invoiceData} />
             </Card>
           </Tab>
@@ -95,12 +95,12 @@ export function InvoicePage() {
       <Col md={6} className="min-w-0">
         <Tabs activeKey={active} onSelect={(t) => setActive(t!)} className="invoice-page-tabs">
           <Tab eventKey="checkRequest" title="Check Request">
-            <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
+            <Card className="h-100 invoice-page-cards">
               <PdfViewer fileBytes={checkData} />
             </Card>
           </Tab>
           <Tab eventKey="editCheckRequest" title="Edit">
-            <Card className="h-100" style={{flexBasis: 0, minWidth: 0}}>
+            <Card className="h-100 invoice-page-cards">
               <h1>EDIT FORM HERE</h1>
             </Card>
           </Tab>

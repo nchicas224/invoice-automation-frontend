@@ -57,5 +57,11 @@
 .invoice-page-tabs + .tab-content,
 .invoice-page-tabs ~ .tab-content {
   border-top: .2rem solid var(--lcf-bg-dark);
-  border-radius: 0 .675rem 0 .675rem;
+  border-radius: .175rem .675rem 0 .675rem;
+}
+
+.invoice-page-cards {
+  flex-basis: 0;
+  min-width: 0;
+  border-top-left-radius: 0;
 }
