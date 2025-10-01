@@ -38,7 +38,9 @@ export function PdfViewer({
                 overflowY: "auto",
                 border: "1px solid #ccc",
                 borderRadius: ".375rem",
-                borderTopLeftRadius: "0"
+                borderTopLeftRadius: "0",
+                borderTopRightRadius: "0.1175rem",
+                borderBottomRightRadius: "0.1175rem"
             }}
         >
             <Document

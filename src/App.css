@@ -31,7 +31,7 @@
   --bs-nav-pills-link-active-bg: var(--lcf-bg-light);
 }
 
-.invoice-page-tabs .nav.nav-tabs {
+.invoice-page-tabs {
   border-top-left-radius: .675rem !important;
   border-top-right-radius: .675rem !important;
   border-bottom: 0 !important;
@@ -57,7 +57,7 @@
 .invoice-page-tabs + .tab-content,
 .invoice-page-tabs ~ .tab-content {
   border-top: .2rem solid var(--lcf-bg-dark);
-  border-radius: .175rem .675rem 0 .675rem;
+  border-radius: 0 .675rem 0 .675rem;
 }
 
 .invoice-page-cards {
