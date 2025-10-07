@@ -8,6 +8,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import Tab from "react-bootstrap/Tab"
 import Tabs from "react-bootstrap/Tabs"
 import { type LayoutCtx } from "../types/layout-types";
+import EditForm from "../components/EditForm";
 
 export function InvoicePage() {
   const { id } = useParams<{ id: string }>();
@@ -108,7 +109,7 @@ export function InvoicePage() {
           </Tab>
           <Tab eventKey="editCheckRequest" title="Edit">
             <Card className="h-100 invoice-page-cards">
-              <h1>EDIT FORM HERE</h1>
+              <EditForm />
             </Card>
           </Tab>
         </Tabs>
