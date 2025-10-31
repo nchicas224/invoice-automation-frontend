@@ -8,7 +8,7 @@ export default function HelpSupport() {
       </h4>
       <br/>
       <h5>
-        or by emailing nchicas-rivas@livingclassrooms.org
+        or by emailing nchicas-rivas@nonprofit.com
       </h5>
     </div>
   );
