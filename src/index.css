@@ -10,10 +10,10 @@ html, body {
 }
 
 :root {
-  --lcf-bg-dark: hsla(210.87, 75.18%, 26.86%);
-  --lcf-bg-light: rgb(89, 164, 243);
-  --lcf-btn-primary: #ff6663;
-  --lcf-bg-tert: #0b7c3e;
+  --company-bg-dark: hsla(210.87, 75.18%, 26.86%);
+  --company-bg-light: rgb(89, 164, 243);
+  --company-btn-primary: #ff6663;
+  --company-bg-tert: #0b7c3e;
 }
 
 /* :root {
