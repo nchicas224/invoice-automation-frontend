@@ -3,16 +3,16 @@
   text-align: center;
 }
 
-.lcf-bg-primary {
-  background-color: var(--lcf-bg-dark) !important;
+.company-bg-primary {
+  background-color: var(--company-bg-dark) !important;
 }
 
-.lcf-bg-secondary {
-  background-color: var(--lcf-bg-light) !important;
+.company-bg-secondary {
+  background-color: var(--company-bg-light) !important;
 }
 
 .btn-primary {
-  background-color: var(--lcf-btn-primary) !important;
+  background-color: var(--company-btn-primary) !important;
   border-color: black;
 }
 
@@ -22,13 +22,13 @@
   --bs-table-striped-bg: #ecedee;
   --bs-table-active-bg: #dfe0e1;
   --bs-table-hover-bg: #74afe9;
-  border-color: var(--lcf-bs-table-border-color) !important;
+  border-color: var(--company-bs-table-border-color) !important;
 }
 
 .sidebar-nav {
   --bs-nav-link-padding-x: 0.5rem !important;
   --bs-nav-link-padding-y: 0.5rem !important;
-  --bs-nav-pills-link-active-bg: var(--lcf-bg-light);
+  --bs-nav-pills-link-active-bg: var(--company-bg-light);
 }
 
 .invoice-page-tabs {
@@ -42,21 +42,21 @@
   background-image: var(--bs-gradient);
   color: #ffffff8c;
   border-color: var(--bs-nav-tabs-link-active-border-color);
-  border-bottom-color: var(--lcf-bg-dark);
+  border-bottom-color: var(--company-bg-dark);
   border-bottom-right-radius: 0.132rem;
 }
 
 .invoice-page-tabs .nav-link.active {
-  background-color: var(--lcf-bg-dark);
+  background-color: var(--company-bg-dark);
   background-image: var(--bs-gradient);
   color: #ffffff;
   margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
-  border: var(--bs-nav-tabs-border-width) solid var(--lcf-bg-dark);
+  border: var(--bs-nav-tabs-border-width) solid var(--company-bg-dark);
 }
 
 .invoice-page-tabs + .tab-content,
 .invoice-page-tabs ~ .tab-content {
-  border-top: .2rem solid var(--lcf-bg-dark);
+  border-top: .2rem solid var(--company-bg-dark);
   border-radius: 0 .675rem 0 .675rem;
 }
 
