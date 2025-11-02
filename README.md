@@ -7,7 +7,7 @@
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red)
 
 A modern React + TypeScript frontend for the **Invoice Automation App**, designed for deployment on **Azure Static Web Apps**.  
-This client provides a responsive, secure, and streamlined interface for managing invoice workflows, approvals, and AI‑powered automation features.
+This client provides a responsive, secure, and streamlined interface for managing invoice workflows, approvals, and AI-powered automation features.
 
 ---
 
@@ -158,13 +158,12 @@ This source code is proprietary and may not be redistributed, modified, or used 
 
 ---
 
-## 📸 Screenshots (Optional)
+## 📸 Screenshots
 
-```markdown
 ![Dashboard View](https://raw.githubusercontent.com/nchicas224/invoice-automation-frontend/main/assets/screenshots/dashboard.png)
-![Invoice Detail](https://raw.githubusercontent.com/nchicas224/invoice-automation-frontend/main/assets/screenshots/invoice-detail.png)
-![Workspace Layout](https://raw.githubusercontent.com/nchicas224/invoice-automation-frontend/main/assets/screenshots/workspace.png)
-```
+![Invoice List](https://raw.githubusercontent.com/nchicas224/invoice-automation-frontend/main/assets/screenshots/invoice-list.png)
+![Invoice Pair](https://raw.githubusercontent.com/nchicas224/invoice-automation-frontend/main/assets/screenshots/invoice-pair.png)
+![Check Request Edit](https://raw.githubusercontent.com/nchicas224/invoice-automation-frontend/main/assets/screenshots/edit.png)
 
 ---
 
